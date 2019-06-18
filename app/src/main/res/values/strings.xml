@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Navico - Test task</string>
+    <string name="image">image</string>
+    <string name="token">pk.eyJ1IjoicGF1bGhvc3QiLCJhIjoiY2p4MXVmMzFtMDB1MjQ5bXk2aTMwc3IzdSJ9.cRwlR9dTkl6vFyWpvaK0pA</string>
 </resources>
