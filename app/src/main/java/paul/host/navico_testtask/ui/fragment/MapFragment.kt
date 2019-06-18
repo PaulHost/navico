@@ -19,9 +19,7 @@ class MapFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Mapbox.getInstance(
-            context!!, "pk.eyJ1IjoicGF1bGhvc3QiLCJhIjoiY2p4MXVmMzFtMDB1MjQ5bXk2aTMwc3IzdSJ9.cRwlR9dTkl6vFyWpvaK0pA"
-        )
+        Mapbox.getInstance(context!!, resources.getString(R.string.token))
     }
 
     @SuppressLint("CheckResult")
