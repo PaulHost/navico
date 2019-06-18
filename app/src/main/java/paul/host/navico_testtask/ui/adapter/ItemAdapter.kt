@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.squareup.picasso.Picasso
 import paul.host.navico_testtask.R
-import paul.host.navico_testtask.data.module.Contributor
+import paul.host.navico_testtask.data.model.Contributor
 import paul.host.navico_testtask.ui.NavigationListener
 
 import java.util.ArrayList
