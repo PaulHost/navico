@@ -18,6 +18,6 @@ class MainActivity : BaseActivity() {
     }
 
     override fun goMap(login: String) {
-        startFragment(MapFragment.getInstance())
+        startFragment(MapFragment.newInstance(login))
     }
 }

@@ -1,8 +1,8 @@
 package paul.host.navico_testtask.data.network
 
 import io.reactivex.Single
-import paul.host.navico_testtask.data.module.Contributor
-import paul.host.navico_testtask.data.module.User
+import paul.host.navico_testtask.data.model.Contributor
+import paul.host.navico_testtask.data.model.User
 import retrofit2.http.GET
 import retrofit2.http.Path
 
