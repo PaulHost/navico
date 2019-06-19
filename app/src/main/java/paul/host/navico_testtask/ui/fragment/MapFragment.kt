@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.mapbox.mapboxsdk.Mapbox
 import com.mapbox.mapboxsdk.camera.CameraPosition
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory
+import com.mapbox.mapboxsdk.geometry.LatLng
 import com.mapbox.mapboxsdk.maps.MapView
 import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback
@@ -17,6 +18,7 @@ import io.reactivex.schedulers.Schedulers
 import paul.host.navico_testtask.App
 import paul.host.navico_testtask.data.repasitory.Repository
 import paulhost.sf.ui.base.BaseFragment
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -54,15 +56,18 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { location, error ->
-                    mapboxMap.animateCamera(
-                        CameraUpdateFactory.newCameraPosition(
-                            CameraPosition.Builder()
-                                .target(location)
-                                .zoom(11.0)
-                                .tilt(20.0)
-                                .build()
+                    run {
+                        mapboxMap.animateCamera(
+                            CameraUpdateFactory.newCameraPosition(
+                                CameraPosition.Builder()
+                                    .target(LatLng(location.second, location.first))
+                                    .zoom(11.0)
+                                    .tilt(20.0)
+                                    .build()
+                            )
                         )
-                    )
+                        Timber.e(error)
+                    }
                 }
 
         }

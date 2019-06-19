@@ -15,10 +15,11 @@ class Repository @Inject constructor(
 
     fun contributorLocationCity(login: String): Single<String> = api.user(login).map { it.location }
 
-    fun contributorLocation(login: String): Single<LatLng> = contributorLocationCity(login).flatMap {
+    fun contributorLocation(login: String): Single<Pair<Double, Double>> = contributorLocationCity(login).flatMap {
         map.location(query = it)
     }.map {
-        val location = it.features[0].center
-        return@map LatLng(location[0], location[1])
+        it.features[0].center
+    }.map {
+        Pair(it[0], it[1])
     }
 }

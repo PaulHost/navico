@@ -15,7 +15,7 @@ data class Feature(
     var placeType: List<String>,
     @SerializedName("relevance")
     @Expose
-    var relevance: Int,
+    var relevance: Double,
     @SerializedName("properties")
     @Expose
     var properties: Properties,
